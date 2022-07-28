@@ -23,7 +23,7 @@ export default function LayoutPage(props:any) {
 
   const menuChange = (router: { key: string; })=>{
     history.push(router.key)
-    console.log(history)
+    console.log(history, 'menuChange')
     setSelectedMenuKey([router.key])
   }
 
@@ -37,7 +37,7 @@ export default function LayoutPage(props:any) {
             title="微前端(qiankun + umi)"
           />
         </div>
-        <Menu theme="dark" mode="inline"   selectedKeys={selectedMenuKey} onClick={menuChange}>
+        <Menu theme="dark" mode="inline" selectedKeys={selectedMenuKey} onClick={menuChange}>
           <SubMenu
             key="main"
             icon={<ClusterOutlined />}

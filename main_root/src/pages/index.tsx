@@ -5,11 +5,8 @@ import {
   start,
   setDefaultMountApp,
   addGlobalUncaughtErrorHandler,
-  initGlobalState,
-  MicroAppStateActions,
 } from 'qiankun';
 import { Microconfig } from '@/registerMicroAppsConfig';
-
 /**
  * 注册微应用
  */
@@ -44,24 +41,11 @@ start({
 // setDefaultMountApp('/purehtml');
 
 // 添加全局异常捕获
-addGlobalUncaughtErrorHandler((handler) => {
-  console.log('异常捕获', handler);
-});
+// addGlobalUncaughtErrorHandler((handler) => {
+//   console.log('异常捕获', handler);
+// });
 
-// 全局状态
-const state = {
-  id: 'main_主应用',
-};
-const actions: MicroAppStateActions = initGlobalState(state);
 
-actions.onGlobalStateChange((state, prev) => {
-  // state: 变更后的状态; prev 变更前的状态
-  console.log(state, prev);
-});
-
-actions.setGlobalState({
-  id: 'main_主应用',
-});
 
 export default function IndexPage({ children }: any) {
   return (
